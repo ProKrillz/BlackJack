@@ -1,0 +1,96 @@
+body{
+    background-color: green;
+}
+.points{
+    color:#F0F0F0;
+}
+.resultBox{
+    visibility: hidden;
+}
+button{
+background: transparent;
+color: #F0F0F0;
+border: 2px solid #F0F0F0;
+font-size: 10px;
+letter-spacing: 2px;
+padding: 20px 75px;
+text-transform: uppercase;
+cursor: pointer;
+display: inline-block;
+margin: 15px 15px;
+-webkit-transition: all 0.4s;
+-moz-transition: all 0.4s;
+transition: all 0.4s; 
+text-align: center;
+}
+button:hover, .O.L-Button:focus {
+    background-color: white;
+    color: #333333;
+    text-decoration: none;
+}
+.card{
+  height: 200px;
+  width:  120px;
+  margin: 5px;
+  border-radius: 5px;
+  border: solid black;
+  background-color: white;
+  display: inline;
+  position: relative;
+  animation-name: slide-left;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  transition: all 0.3s;
+}
+.cardBack, .cardFront{
+  height: 200px;
+  width:  120px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: white;
+  border: solid black;
+  display: inline-block;
+  transition: transform 0.5s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.cardFront {
+  transform: perspective(1000px) rotateY(180deg);
+}
+.cardFront.flipped {
+  transform: perspective(1000px) rotateY(0deg);
+}
+.cardBack {
+  transform: perspective(1000px) rotateY(0deg);
+}
+.cardBack.flipped {
+  transform: perspective(1000px) rotateY(-180deg);
+}
+@media (max-width: 768px) {
+  .card, .cardBack, .cardFront {
+      height: 100px;  
+      width: 60px;
+      margin: 3px;
+      border-radius: 2px;
+  }
+}
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+}
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {     
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+} 
